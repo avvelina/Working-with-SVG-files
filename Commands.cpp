@@ -38,13 +38,12 @@ void Commands::PrintMenu()
 
 void Commands::UserMenu()
 {
-	ShapeContainer figure;
+	ShapeContainer shape;
 	do
 	{
 		char option[MAX_OPTION_SIZE];
 		cout << "Enter your option > "; cin >> option;
-		cin.clear();
-
+	
 		// Function to open a file.
 		if (!strcmp(option, "Open"))
 		{
@@ -82,7 +81,7 @@ void Commands::UserMenu()
 				<< "  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">" << "\n"
 				<< "<svg>" << "\n";
 
-			figure.WriteFile(file);
+			shape.WriteFile(file);
 			file << "</svg>";
 
 			std::cout << " > File successfully saved!\n";
@@ -96,12 +95,13 @@ void Commands::UserMenu()
 			cout << "Save as (give name for file): "; cin >> NameToSaveAs;
 			ofstream file;
 			file.open(NameToSaveAs, ios::app);
+			//NameToSaveAs += ".svg";
 			file << "<?xml version=\"1.0\" standalone=\"no\"?>" << "\n"
 				<< "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"" << "\n"
 				<< "  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">" << "\n"
 				<< "<svg>" << "\n";
 
-			figure.WriteFile(file);
+			shape.WriteFile(file);
 			file << "</svg>";
 			std::cout << " > File successfully saved as " << NameToSaveAs << "!\n";
 			std::cout << "-----------------------------------------------------------\n";
@@ -140,31 +140,31 @@ void Commands::UserMenu()
 		// Function that prints the shapes.
 		else if (!strcmp(option, "Print"))
 		{
-			std::cout << figure;
+			std::cout << shape;
 			std::cout << "-----------------------------------------------------------\n";
 		}
 
 		// Function that creates new shapes.
 		else if (!strcmp(option, "Create"))
 		{
-			char shape[MAX_SHAPE_SIZE];
+			char figure[MAX_SHAPE_SIZE];
 			std::cout << "> What shape do you what to create <rectangle>, <circle> or <line>? \n";
-			std::cout << "> Type the shape you want to create: "; cin >> shape;
-			if (!strcmp(shape, "Line"))
+			std::cout << "> Type the shape you want to create: "; cin >> figure;
+			if (!strcmp(figure, "Line"))
 			{
 				double x1, y1, x2, y2;
 				std::cout << " > Enter x1 coordinates: "; cin >> x1; x1 = fabs(x1);
 				std::cout << " > Enter x2 coordinates: "; cin >> x2; x2 = fabs(x2);
 				std::cout << " > Enter y1 coordinates: "; cin >> y1; y1 = fabs(y1);
 				std::cout << " > Enter y2 coordinates: "; cin >> y2; y2 = fabs(y2);
-				Line* line = new Line(x1, y1, x2, y2);
-				figure.Add(line);
+				Line* line = new Line(x1, y1, x2, y2); 
+				shape.Add(line);
 				delete line;
 				std::cout << "> Successfully created line!\n";
 				std::cout << "-----------------------------------------------------------\n";
 				continue;
 			}
-			else if (!strcmp(shape, "Circle"))
+			else if (!strcmp(figure, "Circle"))
 			{
 				char fill[MAX_FILL_SIZE];
 				double cx, cy, r;
@@ -172,14 +172,14 @@ void Commands::UserMenu()
 				std::cout << " > Enter y coordinates: "; cin >> cy;   cy = fabs(cy);
 				std::cout << " > Enter radious: ";       cin >> r;    r  = fabs(r);
 				std::cout << " > Enter fill: ";          cin >> fill;
-				Circle* circle = new Circle(cx, cy, r, fill); // adds them to the shapecontainer
-				figure.Add(circle);
+				Circle* circle = new Circle(cx, cy, r, fill);
+				shape.Add(circle);
 				delete circle;
 				std::cout << "> Successfully created circle!\n";
 				std::cout << "-----------------------------------------------------------\n";
 				continue;
 			}
-			else if (!strcmp(shape, "Rectangle"))
+			else if (!strcmp(figure, "Rectangle"))
 			{
 				char fill[MAX_FILL_SIZE];
 				double x, y, width, height;
@@ -189,13 +189,13 @@ void Commands::UserMenu()
 				std::cout << " > Enter heigth: ";        cin >> height; height = fabs(height);
 				std::cout << " > Enter fill: ";          cin >> fill;
 				Rectangle* rect = new Rectangle(x, y, width, height, fill);
-				figure.Add(rect);
+				shape.Add(rect);
 				delete rect;
 				std::cout << "> Successfully created rectangle!\n";
 				std::cout << "-----------------------------------------------------------\n";
 				continue;
 			}
-			else if (shape != "Circle" && shape != "Rectangle" && shape != "Line")
+			else if (figure!= "Circle" && figure != "Rectangle" && figure != "Line")
 			{
 				std::cout << "> Wrong input! Type again!\n";
 				std::cout << "-----------------------------------------------------------\n";
@@ -208,7 +208,7 @@ void Commands::UserMenu()
 		{
 			int id;
 			std::cout << "> Enter id of the figure: "; cin >> id;
-			if (figure.RemoveElement(id - 1))
+			if (shape.RemoveElement(id - 1))
 			{
 				std::cout << " > Erased figure " << id << ".\n";
 				std::cout << "-----------------------------------------------------------\n";
@@ -221,7 +221,7 @@ void Commands::UserMenu()
 			int h, v;
 			std::cout << "> Enter vertical: ";	 cin >> v;
 			std::cout << "> Enter horizontal: "; cin >> h;
-			figure.Translate(v, h);
+			shape.Translate(v, h);
 			std::cout << "-----------------------------------------------------------\n";
 		}
 
@@ -237,7 +237,7 @@ void Commands::UserMenu()
 					std::cout << " > cx: "; cin >> cx;
 					std::cout << " > cy: "; cin >> cy;
 					std::cout << " > r: ";  cin >> r;
-					figure.IsWithinCircle(cx, cy, r);
+					shape.IsWithinCircle(cx, cy, r);
 				}
 				if (!strcmp(figures, "Rectangle"))
 				{
@@ -246,7 +246,7 @@ void Commands::UserMenu()
 					std::cout << " > y: ";	    cin >> y;
 					std::cout << " > width: ";  cin >> width;
 					std::cout << " > height: "; cin >> height;
-					figure.IsWithinRectangle(x, y, width, height);
+					shape.IsWithinRectangle(x, y, width, height);
 				}
 			}
 			std::cout << "\n";
