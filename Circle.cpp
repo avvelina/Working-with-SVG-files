@@ -9,8 +9,8 @@
 #include "Circle.h"
 using namespace std;
 
-Circle::Circle(double c, double y, double radius, const char* f)
-	:_x(c), _y(y), r(radius)
+Circle::Circle(double x, double y, double radius, const char* f)
+	:_x(x), _y(y), r(radius)
 {
 	fill = new char[strlen(f) + 1];
 	strcpy(fill, f);
@@ -107,6 +107,8 @@ void Circle::Translate(int v, int h)
 
 bool Circle::IsWithinCircle(double x, double y, double r) const
 {
+	// _x, _y, r -> purvonachalno vuvedenite koordinati na okrujnostta, koyato e suzdadena
+	// x, y, r -> ot opciyata Within
 	double d = sqrt((this->_x - x) * (this->_x - x) + (this->_y - y) * (this->_y - y));
 	if ((d + this->r) < r)
 	{
@@ -118,6 +120,8 @@ bool Circle::IsWithinCircle(double x, double y, double r) const
 
 bool Circle::IsWithinRectangle(double x, double y, double width, double height) const
 {
+	// _x, _y, width, height -> purvonachalno vuvedenite koordinati na okrujnostta, koito e suzdaden
+	// x, y, width, height -> ot opciyata Within 
 	if (((_x > x && _x < x + width) && (_y > y && _y < y + height)) &&
 		((_x + r > x && _x + r < x + width) && (_y > y && _y < y + height)) &&
 		((_x - r > x && x - r < x + width) && (y > y && y < y + height)) &&
