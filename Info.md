@@ -1,9 +1,13 @@
+---
+
+
+---
+
 <blockquote>
-<p>The idea of the project is to make an application that processes svg files. To be able for the user to open a file<br>
-and use some commands to modify it. Once certain file operations have been performed, the application must be able to<br>
-save them to the original file or a new one of the user’s choice.</p>
+<p>The idea of the project is to make an application that processes svg files.<br>
+To be able for the user to open a file and use some commands to modify it.  Once certain file operations have been performed, the application must be able to save them to the original file or a new one of the user’s choice.</p>
 </blockquote>
-<p>References:</p>
+<p><strong>References:</strong></p>
 <ul>
 <li>Лекции по „Обектно-ориентирано програмиране“ на доц. Трифон Трифонов, 2020, Факултет по математика и информатика, Софийски университет</li>
 <li>Магдалина Тодорова, Петър Армянов, Калин Георгиев, „Сборник от задачи по програмиране на C++, Втора част”, 2008</li>
