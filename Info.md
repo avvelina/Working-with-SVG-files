@@ -1,8 +1,3 @@
----
-
-
----
-
 <blockquote>
 <p>The idea of the project is to make an application that processes svg files. To be able for the user to open a file<br>
 and use some commands to modify it. Once certain file operations have been performed, the application must be able to<br>
