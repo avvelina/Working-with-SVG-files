@@ -42,7 +42,7 @@ public:
 	/**
 	 * Destructor.
 	 */
-	virtual ~ShapeContainer();
+	~ShapeContainer();
 
 	/**
 	 * Function adding an element to the array.
