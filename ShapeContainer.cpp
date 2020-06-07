@@ -29,16 +29,15 @@ void ShapeContainer::Copy(const ShapeContainer& other)
 
 ShapeContainer& ShapeContainer::operator=(const ShapeContainer& other)
 {
-	if (this == &other)
+	if (this != &other)
 	{
-		return *this;
+	    for (int i = 0; i < size; ++i)
+	    {
+	 	delete shape[i];
+	    }
+	    delete[] shape;
+	    Copy(other);
 	}
-
-	for (int i = size - 1; i >= 0; --i)
-	{
-		RemoveElement(i);
-	}
-	Copy(other);
 	return *this;
 }
 
