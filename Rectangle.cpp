@@ -111,6 +111,8 @@ void Rectangle::Translate(int v, int h)
 
 bool Rectangle::IsWithinCircle(double cx, double cy, double r) const
 {
+	// x, y, width, height -> koordinati na pravougulnika, koito e suzdaden (create)
+	// cx, cy, r -> ot opciyata Within
 	if (((x - cx) * (x - cx) + (y - cy) * (y - cy) < r * r)
 		&& (((x + width) - cx) * ((x + width) - cx) +
 			((y + height) - cy) * ((y + height) - cy) < r * r))
@@ -122,6 +124,8 @@ bool Rectangle::IsWithinCircle(double cx, double cy, double r) const
 }
 bool Rectangle::IsWithinRectangle(double x, double y, double width, double height) const
 {
+	// this->x, this->y, this->width, this->height -> koordinati na pravougulnika, koito e suzdaden (create)
+	// x, y, width, height -> ot opciyata Within
 	if (((this->x + this->width) < (x + width)) && (this->x > x)
 		&& (this->y > y) && ((this->y + this->height) < (y + height)))
 	{
