@@ -70,6 +70,8 @@ void Line::Translate(int v, int h)
 
 bool Line::IsWithinCircle(double cx, double cy, double r) const
 {
+	// x1, y1, x2, y2, r -> koordinati na liniyata, koyato e suzdadena (create)
+	// cx, cy, r -> ot opciyata Within
 	if (((x1 - cx) * (x1 - cx) + (y1 - cy) * (y1 - cy) < r * r)
 		&& ((x2 - cx) * (x2 - cx) + (y2 - cy) * (y2 - cy) < r * r))
 	{
@@ -81,6 +83,8 @@ bool Line::IsWithinCircle(double cx, double cy, double r) const
 
 bool Line::IsWithinRectangle(double x, double y, double width, double height) const
 {
+	// x1, y1, x2, y2, r -> koordinati na liniyata, koyato e suzdadena (create)
+	// x, y, width, height -> ot opciyata Within
 	if (((x1 > x && x1 < x + width) && (y1 > y && y1 < y + height))
 		&& ((x2 > x && x2 < x + width) && (y2 > y && y2 < y + height)))
 	{
