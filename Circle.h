@@ -77,7 +77,6 @@ public:
 	 */
 	virtual bool IsWithinCircle(double c_x, double c_y, double r) const;
 
-
 	/**
 	 * Virtual function checks if the circle contains a rectangle.
 	 */
