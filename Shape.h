@@ -38,13 +38,7 @@ public:
 	* A virtual function that helps us translate objects of any inherited class.
 	*/
 	virtual void Translate(int v, int h) = 0;
-
-	/*
-	 *The distance between (xc, yc) and (xp, yp) is given by the Pythagorean theorem as
-	 *d = sqrt((xp - xc)^2 + (yp - yc)^2)
-	 *The point (xp, yp) is inside the circle if d^2<r^2 and on the circle if d^2=r^2
-	 */
-
+	
 	 /**
 	  * A virtual function that helps us search for
 	  * an object from any inherited class in a given circle.
