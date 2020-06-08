@@ -77,7 +77,7 @@ public:
 	/**
 	 * Prints the array on the screen.
 	 */
-	friend ostream& operator<<(ostream& out, const ShapeContainer& e);
+	friend ostream& operator<<(ostream& out, const ShapeContainer& other);
 
 private:
 
