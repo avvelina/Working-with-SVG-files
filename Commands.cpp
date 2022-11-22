@@ -24,15 +24,15 @@ const unsigned MAX_FILL_SIZE = 26;
 void Commands::PrintMenu()
 {
 	std::cout << "-----------------------------------------------------------\n";
-	std::cout << "		     SVG PROJECT									 \n";
+	std::cout << "		     SVG PROJECT				 \n";
 	std::cout << "-----------------------------------------------------------\n";
-	std::cout << "		  Avaiable commands:								 \n";
-	std::cout << "			> Open											 \n";
-	std::cout << "			> Close											 \n";
-	std::cout << "			> Save											 \n";
-	std::cout << "			> Saveas										 \n";
-	std::cout << "			> Help											 \n";
-	std::cout << "			> Exit											 \n";
+	std::cout << "		  Avaiable commands:				 \n";
+	std::cout << "			> Open					 \n";
+	std::cout << "			> Close					 \n";
+	std::cout << "			> Save					 \n";
+	std::cout << "			> Saveas				 \n";
+	std::cout << "			> Help					 \n";
+	std::cout << "			> Exit					 \n";
 	std::cout << "-----------------------------------------------------------\n";
 }
 
