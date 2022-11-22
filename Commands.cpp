@@ -1,6 +1,4 @@
-/*SVG Project created by Alexandra Velina
- *		   Informarics, 2020
- */
+/*SVG Project created by Alexandra Velina Informarics, 2020 */
 
 #include <iostream>
 #include <fstream>
@@ -111,21 +109,21 @@ void Commands::UserMenu()
 		else if (!strcmp(option, "Help"))
 		{
 			cout << "-----------------------------------------------------------\n";
-			cout << "	>> The following commands are supported: <<			    \n";
+			cout << "	>> The following commands are supported: <<	    \n";
 			cout << "-----------------------------------------------------------\n";
-			cout << "	> Open	   opens file.									\n";
-			cout << "	> Close	   closes currently opened file.				\n";
-			cout << "	> Save	   saves the currently open file.				\n";
-			cout << "	> Saveas   saves the currently open file in <file>.		\n";
-			cout << "	> Help	   prints this information.						\n";
-			cout << "	> Exit	   exists the program.							\n";
+			cout << "	> Open	   opens file.				    \n";
+			cout << "	> Close	   closes currently opened file.	    \n";
+			cout << "	> Save	   saves the currently open file.	    \n";
+			cout << "	> Saveas   saves the currently open file in <file>. \n";
+			cout << "	> Help	   prints this information.		    \n";
+			cout << "	> Exit	   exists the program.			    \n";
 			cout << "-----------------------------------------------------------\n";
-			cout << "		>> SVG Commands: <<									\n";
+			cout << "		>> SVG Commands: <<			    \n";
 			cout << "-----------------------------------------------------------\n";
-			cout << "	> Print	     prints all figures.						\n";
-			cout << "	> Create     creates a new figure.						\n";
-			cout << "	> Erase      remove figure with sequence number.		\n";
-			cout << "	> Translate  translates all figures.					\n";
+			cout << "	> Print	     prints all figures.		    \n";
+			cout << "	> Create     creates a new figure.	      	    \n";
+			cout << "	> Erase      remove figure with sequence number.    \n";
+			cout << "	> Translate  translates all figures.		    \n";
 			cout << "-----------------------------------------------------------\n";
 		}
 
