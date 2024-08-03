@@ -7,8 +7,7 @@
 #include <iostream>
 #include "Shape.h"
 
- /**
-  * A class that is an array of pointers to objects from classes inherited by Shape.
+ /* A class that is an array of pointers to objects from classes inherited by Shape.
   * The container should generally be able to do the following things:
   * - add a shape
   * - access a shape
@@ -16,65 +15,42 @@
   * - saves them to a file.
   * - remove a shape
   * - translate a shape
-  * - within circle/rectangle
-  */
+  * - within circle/rectangle */
 class ShapeContainer
 {
 public:
 
-	/**
-	 * Default constructor.
-	 */
+	/* Default constructor. */
 	ShapeContainer();
 
-	/**
-	 * Copy constructor.
-	 */
+	/* Copy constructor. */
 	ShapeContainer(const ShapeContainer& other);
 
-	/**
-	 * Redefine an operator.
-	 */
+	/* Redefine an operator. */
 	ShapeContainer& operator=(const ShapeContainer& e);
 
-	/**
-	 * Destructor.
-	 */
+	/* Destructor. */
 	~ShapeContainer();
 
-	/**
-	 * Function adding an element to the array.
-	 */
+	/* Function adding an element to the array. */
 	void Add(Shape* newshape);
 
-	/**
-	 * Function removes an element from an array by a given index. ("Erase" command)
-	 */
+	/* Function removes an element from an array by a given index. ("Erase" command) */
 	bool RemoveElement(int index);
 
-	/**
-	 * Saves the elements of the array to a file.
-	 */
+	/* Saves the elements of the array to a file. */
 	void WriteFile(ofstream& outf) const;
 
-	/**
-	 * Translates the elements of the array. ("Translate" option)
-	 */
+	/* Translates the elements of the array. ("Translate" option) */
 	void Translate(int v, int h);
 
-	/**
-	 * Find which elements of the array are contained entirely in a given circle.
-	 */
+	/* Find which elements of the array are contained entirely in a given circle. */
 	void IsWithinCircle(double cx, double cy, double r) const;
 
-	/**
-	 * Search for which elements of the array are contained entirely in a given rectangle.
-	 */
+	/* Search for which elements of the array are contained entirely in a given rectangle. */
 	void IsWithinRectangle(double x, double y, double width, double height) const;
 
-	/**
-	 * Prints the array on the screen.
-	 */
+	/* Prints the array on the screen. */
 	friend ostream& operator<<(ostream& out, const ShapeContainer& other);
 
 private:
@@ -82,9 +58,7 @@ private:
 	Shape** shape;
 	int capacity, size;
 
-	/*
-	* Methods
-	*/
+	/* Methods */
 	void Resize();
 
 	void Copy(const ShapeContainer& e);
