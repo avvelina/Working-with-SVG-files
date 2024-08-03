@@ -1,6 +1,4 @@
-/*SVG Project created by Alexandra Velina
- *		   Informarics, 2020
- */
+/*SVG Project created by Alexandra Velina, 2020 */
 
 #pragma once
 #ifndef LINE_H
@@ -15,14 +13,10 @@ class Line : public Shape
 {
 public:
 
-	/**
-	 * Constructor with parameters.
-	 */
+	/* Constructor with parameters. */
 	Line(double x1C = 0, double y1C = 0, double x2C = 0, double y2C = 0);
 
-	/**
-	 * Get Function Declarations for private variables
-	 */
+	/* Get Function Declarations for private variables */
 	double getX1() const;
 	double getY1() const;
 	double getX2() const;
@@ -36,35 +30,22 @@ public:
 	void setX2(double x2);
 	void setY2(double y2);
 
-	/**
-	 * An output operator that prints the circle.
-	 */
+	/* An output operator that prints the circle. */
 	virtual ostream& Print(ostream& out) const;
 
-	/**
-	 * Enters the information in the file.
-	 */
+	/* Enters the information in the file. */
 	virtual void WriteFile(ofstream& of) const;
 
-	/**
-	 * A virtual function from Shape that returns a pointer to Shape,
-	 * where a new object with the same data is created.
-	 */
+	/* A virtual function from Shape that returns a pointer to Shape, where a new object with the same data is created. */
 	virtual Shape* Clone() const;
 
-	/**
-	 * Translates the line.
-	 */
+	/* Translates the line. */
 	virtual void Translate(int v, int h);
 
-	/**
-	 * Virtual function checks if the line contains a circle.
-	 */
+	/* Virtual function checks if the line contains a circle. */
 	virtual bool IsWithinCircle(double cx, double cy, double r) const;
 
-	/**
-	 * Virtual function checks if the line contains a rectangle.
-	 */
+	/* Virtual function checks if the line contains a rectangle. */
 	virtual bool IsWithinRectangle(double x, double y, double width, double height) const;
 
 private:
