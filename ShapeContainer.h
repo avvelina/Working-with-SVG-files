@@ -1,6 +1,4 @@
-/*SVG Project created by Alexandra Velina
- *		   Informarics, 2020
- */
+/*SVG Project created by Alexandra Velina, 2020 */
 
 #pragma once
 #ifndef SHAPEARR_H
